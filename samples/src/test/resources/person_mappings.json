@@ -1,0 +1,31 @@
+{
+  "properties": {
+    "author": {
+      "type": "keyword",
+      "index": true
+    },
+    "bookName": {
+      "type": "keyword"
+    },
+    "category": {
+      "type": "keyword",
+      "index": true
+    },
+    "noOfPages": {
+      "type": "long",
+      "doc_values": true
+    },
+    "price": {
+      "type": "double",
+      "doc_values": true
+    },
+    "publisher": {
+      "type": "text",
+      "doc_values": true
+    },
+    "publishedDate": {
+      "type": "date",
+      "doc_values": true
+    }
+  }
+}

@@ -19,11 +19,21 @@ java {
 
 dependencies {
     implementation(project(":java-client"))
+    testImplementation(project(":java-client"))
+    testAnnotationProcessor(project(":java-client"))
     implementation("org.apache.logging.log4j", "log4j-api","[2.17.1,3.0)")
     implementation("org.apache.logging.log4j", "log4j-core","[2.17.1,3.0)")
     implementation("org.apache.logging.log4j", "log4j-slf4j2-impl","[2.17.1,3.0)")
     implementation("commons-logging", "commons-logging", "1.2")
     implementation("com.fasterxml.jackson.core", "jackson-databind", "2.15.2")
+
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.1")
+
+    testImplementation("org.projectlombok:lombok:1.18.30")
+    testAnnotationProcessor("org.projectlombok:lombok:1.18.30")
+
+    testImplementation("commons-io:commons-io:2.15.1")
+    testAnnotationProcessor("commons-io:commons-io:2.15.1")
 }
 
 spotless {
@@ -48,4 +58,8 @@ application {
 
 tasks.named<JavaExec>("run") {
     systemProperty("samples.mainClass", System.getProperty("samples.mainClass"))
+}
+
+tasks.test {
+    useJUnitPlatform()
 }

@@ -1,8 +1,5 @@
 package org.opensearch.client.samples;
 
-import org.opensearch.client.samples.util.OpenSearchUtil;
-import org.opensearch.client.opensearch._types.mapping.TypeMapping;
-
 import java.io.FileNotFoundException;
 
 /*
@@ -16,5 +13,4 @@ public class Documents {
     public void createDocument() throws FileNotFoundException {
 
     }
-    
 }
